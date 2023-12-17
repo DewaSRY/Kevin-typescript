@@ -1,11 +1,11 @@
 import OP from "./RandomOperations.ts";
 import RD from "./RandomsNumber.ts";
-import MO from "./MathOperation.ts";
+import MathOperation from "./MathOperation.ts";
 export default class GenerateOperation {
   private static randomNumbersOperation() {
     return RD.getRandomOperation(20);
   }
-  public static getRandomCalCulation() {
+  public static getRandomCalCulation(): MathOperation {
     const { oneNumber, twoNumber, threeNumber } =
       GenerateOperation.threeNumbers();
     const { operations, result } = GenerateOperation.calculateThreeNumber(
@@ -13,7 +13,7 @@ export default class GenerateOperation {
       twoNumber,
       threeNumber
     );
-    return new MO(
+    return new MathOperation(
       oneNumber,
       twoNumber,
       threeNumber,
@@ -22,7 +22,6 @@ export default class GenerateOperation {
       result
     );
   }
-
   private static threeNumbers() {
     let oneNumber = GenerateOperation.randomNumbersOperation();
     let twoNumber = GenerateOperation.randomNumbersOperation();

@@ -10,6 +10,20 @@ export default class MathOperation {
     private result: number
   ) {}
 
+  public setUp(
+    numberOne: number,
+    numberTwo: number,
+    numberThree: number,
+    operationOne: OperationsSign,
+    operationTwo: OperationsSign
+  ) {
+    this.numberOne = numberOne;
+    this.numberTwo = numberTwo;
+    this.numberThree = numberThree;
+    this.operationOne = operationOne;
+    this.operationTwo = operationTwo;
+  }
+
   public getNumOne() {
     return this.numberOne;
   }

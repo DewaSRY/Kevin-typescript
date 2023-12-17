@@ -1,0 +1,52 @@
+body {
+  background-color: rgb(84, 81, 81);
+}
+h2,
+h1 {
+  font-size: 2rem;
+  color: rgb(43, 42, 42);
+}
+h2 {
+  text-align: center;
+}
+p {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+.main-container {
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 20px;
+}
+
+.option-container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.option {
+  border: solid 2px black;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.option:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: solid 2px white;
+}
+.score-board {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}

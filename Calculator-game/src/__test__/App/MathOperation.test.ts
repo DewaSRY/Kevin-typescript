@@ -15,6 +15,7 @@ describe("MathOperation ", () => {
       ),
       expected: "( 1 + 2 ) x 3 = ?",
     },
+
     {
       suit: new MathOperation(
         1,

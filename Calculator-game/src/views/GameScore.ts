@@ -19,12 +19,13 @@ export default class GameScore extends Observer {
     this.hightScore = this.scoreBoard.getHightScore();
   }
   update(): void {
+    this.currentScore = this.scoreBoard.getCurrentScore();
+
     if (this.currentScore >= this.hightScore) {
       this.hightScore = this.currentScore;
     }
-    this.currentScore++;
-    this.secondElement.innerHTML = this.currentScore.toString();
-    this.hightScoreElement.innerHTML = this.hightScore.toString();
+    this.secondElement.innerHTML = `Score: ${this.currentScore.toString()}`;
+    this.hightScoreElement.innerHTML = `Hight Score: ${this.hightScore.toString()}`;
   }
   static setUp(root: HTMLElement) {
     return new GameScore(root);

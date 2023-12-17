@@ -6,8 +6,7 @@
 export default class RandomsNumber {
   public static getRandomOperation(lengthNumber: number) {
     if (lengthNumber < 0) throw new Error("Please insert number bigger then 1");
-    // if (lengthNumber === 0) return 0;
-    // let ;
+
     return Math.round(Math.random() * lengthNumber - 1);
   }
 

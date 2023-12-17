@@ -1,17 +1,24 @@
 import MO from "@/app/MathQuizObserver";
 import GameOptions from "@/app/GameOptions";
-export default class NumberOptions {
+import { Observer } from "@/app/MathQuizObserver";
+import GOP from "@/app/GenerateOptions";
+export default class NumberOptions extends Observer {
   private root: Element;
-  private gameOptions: GameOptions;
+  private gameOptions: GameOptions | null = null;
   //   private insertNumber: number;
-  constructor(root: Element, gameOptions: GameOptions) {
+  constructor(root: Element) {
+    super();
+    this.subject.subscribe(this);
     this.root = root;
-    this.gameOptions = gameOptions;
-    this.root.innerHTML = gameOptions.getNumberAsString();
+
     this.root.addEventListener("click", () => {
+      if (this.gameOptions === null) return;
       this.gameOptions.setAnswer();
       MO.getSubject().notify();
-      console.log(MO.getSubject().getALlSubject());
     });
+  }
+  update(): void {
+    this.gameOptions = GOP.getGameOptions()!;
+    this.root.innerHTML = this.gameOptions.getNumberAsString();
   }
 }

@@ -2,8 +2,11 @@ import OP from "./RandomOperations.ts";
 import RD from "./RandomsNumber.ts";
 import MathOperation from "./MathOperation.ts";
 export default class GenerateOperation {
-  private static randomNumbersOperation() {
-    return RD.getRandomOperation(20);
+  private static rangeNumberToGenerate = 10;
+  private static randomNumbersOperation(
+    range = GenerateOperation.rangeNumberToGenerate
+  ) {
+    return RD.getRandomOperation(range);
   }
   public static getRandomCalCulation(): MathOperation {
     const { oneNumber, twoNumber, threeNumber } =

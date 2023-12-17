@@ -10,22 +10,21 @@
 
 ![arithmetic game](./image/ArithmeticGame.png)
 
+for better experience please go to the Calculator-game directory, to do that user just need to run this code
+
+```bash
+npm run go
+```
+
 ------how to run the program--------\
  first install the dependency, with this comment
 
 ```bash
-npm i
+npm install
 ```
 
 then after all get install, run this comment
 
 ```bash
 npm run dev
-```
-
-it's oke to run the app on the root directory\
-or user can run this commat to go in the Arithmetic directory
-
-```bash
-npm run go
 ```

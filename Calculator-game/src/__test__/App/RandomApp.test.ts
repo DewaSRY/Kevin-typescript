@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import RandomsNumber from "@/app/RandomsNumber.ts";
+import RandomApp from "@/app/RandomApp";
 
-describe("RandomsNumber", () => {
+describe("RandomApp", () => {
   let insideRange = (num: number, maxNumber: number) => {
     if (num === 0) return true;
     return num >= -1 && num <= maxNumber - 1;
@@ -32,7 +32,7 @@ describe("RandomsNumber", () => {
     },
   ])("shuffle the sequents of arr $numArr", ({ numArr }) => {
     let shuffleArr = [...numArr];
-    RandomsNumber.shuffle(numArr);
+    RandomApp.shuffle(numArr);
 
     let actualResult: boolean = isArrGetShuffle(numArr, shuffleArr) <= 2;
     if (!actualResult) {
@@ -52,8 +52,8 @@ describe("RandomsNumber", () => {
     {
       suite: 2,
     },
-  ])("RandomsNumber generate number in range  $suite ", ({ suite }) => {
-    let actual = RandomsNumber.getRandomOperation(suite);
+  ])("RandomApp generate number in range  $suite ", ({ suite }) => {
+    let actual = RandomApp.getRandomOperation(suite);
     expect(insideRange(actual, suite)).toBeTruthy();
   });
 
@@ -67,11 +67,8 @@ describe("RandomsNumber", () => {
     {
       suite: 2,
     },
-  ])(
-    "RandomsNumber generate arr number in range exclude  $suite ",
-    ({ suite }) => {
-      let actual = RandomsNumber.getArrOfNumbers(20, suite);
-      expect(actual.includes(suite)).toBeFalsy();
-    }
-  );
+  ])("RandomApp generate arr number in range exclude  $suite ", ({ suite }) => {
+    let actual = RandomApp.getArrOfNumbers(20, suite);
+    expect(actual.includes(suite)).toBeFalsy();
+  });
 });

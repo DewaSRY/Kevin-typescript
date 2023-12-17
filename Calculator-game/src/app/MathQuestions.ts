@@ -1,6 +1,6 @@
-import { OperationsSign } from "./RandomOperations.ts";
+import { OperationsSign } from "./MathApp.ts";
 
-export default class MathOperation {
+export default class MathQuestions {
   constructor(
     private numberOne: number,
     private numberTwo: number,
@@ -51,7 +51,7 @@ export default class MathOperation {
 
     return fistOperation + nextSecondOperation;
   }
-  public equalTo(obj: MathOperation) {
+  public equalTo(obj: MathQuestions) {
     if (obj === null) return false;
     return (
       this.numberOne === obj.getNumOne() &&

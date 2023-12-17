@@ -1,14 +1,14 @@
 /**
  *
  */
-import GameOptions from "./GameOptions";
-import RandomsNumber from "./RandomsNumber";
-export default class GenerateOptions {
+import GameOptions from "./AnswerOptions";
+import RandomsNumber from "./RandomApp";
+export default class GetOptions {
   private static allGameOptions: GameOptions[] = [];
 
   public static setRightOptions(answer: number) {
     let otherOptions = RandomsNumber.getArrOfNumbers(100, answer);
-    const { allGameOptions, clearOptions } = GenerateOptions;
+    const { allGameOptions, clearOptions } = GetOptions;
     clearOptions();
     otherOptions.forEach((num) => {
       allGameOptions.push(new GameOptions(num, false));
@@ -19,12 +19,12 @@ export default class GenerateOptions {
   }
 
   public static getAllOptions() {
-    const { allGameOptions } = GenerateOptions;
+    const { allGameOptions } = GetOptions;
 
     return allGameOptions;
   }
   private static clearOptions() {
-    const { allGameOptions } = GenerateOptions;
+    const { allGameOptions } = GetOptions;
     let optionsLength = allGameOptions.length;
     if (optionsLength <= 0) return;
     while (optionsLength) {
@@ -33,15 +33,15 @@ export default class GenerateOptions {
     }
   }
   private static *gameOptionsGenerator() {
-    const { allGameOptions } = GenerateOptions;
+    const { allGameOptions } = GetOptions;
     for (let GM of allGameOptions) yield GM;
   }
-  static createGenerator = GenerateOptions.gameOptionsGenerator();
+  static createGenerator = GetOptions.gameOptionsGenerator();
   public static getGameOptions(): GameOptions {
-    let optionsIter = GenerateOptions.createGenerator.next();
+    let optionsIter = GetOptions.createGenerator.next();
     if (optionsIter.done === true) {
-      GenerateOptions.createGenerator = GenerateOptions.gameOptionsGenerator();
-      return GenerateOptions.getGameOptions();
+      GetOptions.createGenerator = GetOptions.gameOptionsGenerator();
+      return GetOptions.getGameOptions();
     }
     return optionsIter.value;
   }
@@ -49,8 +49,8 @@ export default class GenerateOptions {
 
 // describe("test", () => {
 //   it("first test", () => {
-//     GenerateOptions.setRightOptions(34);
+//     GetOptions.setRightOptions(34);
 //     console.log("test");
-//     console.log(GenerateOptions.getGameOptions());
+//     console.log(GetOptions.getGameOptions());
 //   });
 // });

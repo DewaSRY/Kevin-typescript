@@ -7,3 +7,18 @@
 > > there is very difficult task form me because the needs to solve that exercise to understand functional paradigm where there is global data then i need to make the function reusable.
 
 ## Make calculator game
+
+![arithmetic game](./image/ArithmeticGame.png)
+
+------how to run the program--------\
+ first install the dependency, with this comment
+
+```bash
+npm i
+```
+
+then after all get install, run this comment
+
+```bash
+npm run client
+```

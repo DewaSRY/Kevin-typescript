@@ -1,5 +1,5 @@
 // import { describe, expect, it } from "vitest";
-import Randoms from "./RandomsNumber.ts";
+import Randoms from "./RandomApp.ts";
 export const enum OperationsSign {
   ADD = "+",
   SUBTRACT = "-",
@@ -18,7 +18,7 @@ type valueOperation = {
 /**
  *
  */
-export default class RandomOperations {
+export default class MathApp {
   public static randomOperation: fnNumericOperation<valueOperation> = (
     oneNumber,
     twoNumber
@@ -27,22 +27,22 @@ export default class RandomOperations {
     switch (randomNum) {
       case 1:
         return {
-          result: RandomOperations.subtract(oneNumber, twoNumber),
+          result: MathApp.subtract(oneNumber, twoNumber),
           operation: OperationsSign.SUBTRACT,
         };
       case 2:
         return {
-          result: RandomOperations.multiple(oneNumber, twoNumber),
+          result: MathApp.multiple(oneNumber, twoNumber),
           operation: OperationsSign.MULTIPLY,
         };
       case 3:
         return {
-          result: RandomOperations.division(oneNumber, twoNumber),
+          result: MathApp.division(oneNumber, twoNumber),
           operation: OperationsSign.DIVISION,
         };
       default:
         return {
-          result: RandomOperations.add(oneNumber, twoNumber),
+          result: MathApp.add(oneNumber, twoNumber),
           operation: OperationsSign.ADD,
         };
     }
@@ -61,7 +61,8 @@ export default class RandomOperations {
     oneNumber,
     twoNumber
   ) => {
-    return oneNumber * twoNumber;
+    let result = MathApp.fixNum(oneNumber * twoNumber);
+    return result;
   };
 
   private static division: fnNumericOperation<number> = (
@@ -70,11 +71,15 @@ export default class RandomOperations {
   ) => {
     try {
       let devonsResult = oneNumber / twoNumber;
+      devonsResult = MathApp.fixNum(devonsResult);
       return devonsResult;
     } catch (error) {
       return 0;
     }
   };
+  private static fixNum(number: number) {
+    return Number(number.toFixed(1));
+  }
 }
 
 // console.log("hallo");

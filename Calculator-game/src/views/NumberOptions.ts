@@ -1,7 +1,7 @@
 import MO from "@/app/MathQuizObserver";
-import GameOptions from "@/app/GameOptions";
+import GameOptions from "@/app/AnswerOptions";
 import { Observer } from "@/app/MathQuizObserver";
-import GOP from "@/app/GenerateOptions";
+import GOP from "@/app/GetOptions";
 export default class NumberOptions extends Observer {
   private root: Element;
   private gameOptions: GameOptions | null = null;

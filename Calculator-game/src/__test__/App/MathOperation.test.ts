@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import MathOperation from "@/app/MathOperation.ts";
-import { OperationsSign } from "@/app/RandomOperations.ts";
+import MathOperation from "@/app/MathQuestions";
+import { OperationsSign } from "@/app/MathApp";
 
 describe("MathOperation ", () => {
   it.each([

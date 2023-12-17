@@ -1,6 +1,6 @@
 import { Observer } from "@/app/MathQuizObserver";
-import GenerateOperation from "@/app/GenerateOperation";
-import GOP from "@/app/GenerateOptions";
+import GenerateOperation from "@/app/GetQuestion";
+import GOP from "@/app/GetOptions";
 
 // import GameOptions from "@/app/GameOptions";
 // import RandomsNumber from "@/app/RandomsNumber";

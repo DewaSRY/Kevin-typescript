@@ -3,7 +3,7 @@
 /**
  *
  */
-export default class RandomsNumber {
+export default class RandomApp {
   public static getRandomOperation(lengthNumber: number) {
     if (lengthNumber < 0) throw new Error("Please insert number bigger then 1");
 
@@ -17,7 +17,7 @@ export default class RandomsNumber {
   ) {
     let arr = [];
     for (let num = 0; num < amount; num++) {
-      let ranNumber = RandomsNumber.getRandomOperation(lengthNumber);
+      let ranNumber = RandomApp.getRandomOperation(lengthNumber);
       if (ranNumber === excludeNum || ranNumber <= 0) {
         num--;
         continue;
@@ -31,10 +31,10 @@ export default class RandomsNumber {
     let currentIndex = arrOfElement.length,
       randomIndex;
     while (currentIndex > 0) {
-      randomIndex = RandomsNumber.getRandomOperation(currentIndex);
+      randomIndex = RandomApp.getRandomOperation(currentIndex);
       randomIndex = Math.abs(randomIndex);
       currentIndex--;
-      RandomsNumber.swap(arrOfElement, currentIndex, randomIndex);
+      RandomApp.swap(arrOfElement, currentIndex, randomIndex);
     }
     return arrOfElement;
   }

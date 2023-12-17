@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
-import Operation from "@/app/RandomOperations.ts";
-import Randoms from "@/app/RandomsNumber.ts";
+import Operation from "@/app/MathApp";
+import Randoms from "@/app/RandomApp";
 
 describe("RandomOperations ", () => {
   it("first addition  ", () => {

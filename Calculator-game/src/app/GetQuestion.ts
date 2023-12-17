@@ -1,17 +1,17 @@
-import OP from "./RandomOperations.ts";
-import RD from "./RandomsNumber.ts";
-import MathOperation from "./MathOperation.ts";
-export default class GenerateOperation {
+import OP from "./MathApp.ts";
+import RD from "./RandomApp.ts";
+import MathOperation from "./MathQuestions.ts";
+
+export default class GetQuestion {
   private static rangeNumberToGenerate = 10;
   private static randomNumbersOperation(
-    range = GenerateOperation.rangeNumberToGenerate
+    range = GetQuestion.rangeNumberToGenerate
   ) {
     return RD.getRandomOperation(range);
   }
   public static getRandomCalCulation(): MathOperation {
-    const { oneNumber, twoNumber, threeNumber } =
-      GenerateOperation.threeNumbers();
-    const { operations, result } = GenerateOperation.calculateThreeNumber(
+    const { oneNumber, twoNumber, threeNumber } = GetQuestion.threeNumbers();
+    const { operations, result } = GetQuestion.calculateThreeNumber(
       oneNumber,
       twoNumber,
       threeNumber
@@ -26,9 +26,9 @@ export default class GenerateOperation {
     );
   }
   private static threeNumbers() {
-    let oneNumber = GenerateOperation.randomNumbersOperation();
-    let twoNumber = GenerateOperation.randomNumbersOperation();
-    let threeNumber = GenerateOperation.randomNumbersOperation();
+    let oneNumber = GetQuestion.randomNumbersOperation();
+    let twoNumber = GetQuestion.randomNumbersOperation();
+    let threeNumber = GetQuestion.randomNumbersOperation();
     return {
       oneNumber,
       twoNumber,

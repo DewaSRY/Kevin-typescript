@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
-import GenerateOperation from "@/app/GenerateOperation.ts";
-import { OperationsSign } from "@/app/RandomOperations.ts";
-import MathOperation from "@/app/MathOperation.ts";
+import GenerateOperation from "@/app/GetQuestion";
+import { OperationsSign } from "@/app/MathApp";
+import MathOperation from "@/app/MathQuestions";
 describe("GenerateOperation", () => {
   it("getRandomCalCulation", () => {
     vi.spyOn(GenerateOperation as any, "threeNumbers").mockImplementationOnce(

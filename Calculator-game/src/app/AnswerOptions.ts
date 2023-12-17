@@ -1,6 +1,6 @@
 import ScoreBoards from "@/model/ScoreBoards";
 
-export default class GameOptions {
+export default class AnswerOptions {
   private isRight: boolean;
   private numbers: number;
   constructor(numbers: number, isRight: boolean) {

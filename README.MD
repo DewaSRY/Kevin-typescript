@@ -20,5 +20,12 @@ npm i
 then after all get install, run this comment
 
 ```bash
-npm run client
+npm run dev
+```
+
+it's oke to run the app on the root directory\
+or user can run this commat to go in the Arithmetic directory
+
+```bash
+npm run go
 ```
